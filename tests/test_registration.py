@@ -11,10 +11,10 @@ def test_successful_registration(setup, login_not_registered_user):
 
     driver.get("https://stellarburgers.nomoreparties.site/register")
 
-    name_field = driver.find_element(By.XPATH, "//fieldset[1]//div[1]//div[1]//input[1]")
+    name_field = driver.find_element(By.XPATH, "(//input[@name='name'])[1]")
     name_field.send_keys(name)
 
-    email_field = driver.find_element(By.XPATH, "//fieldset[2]//div[1]//div[1]//input[1]")
+    email_field = driver.find_element(By.XPATH, "(//input[@name='name'])[2]")
     email_field.send_keys(email)
 
     password_field = driver.find_element(By.XPATH, " //input[@name='Пароль']")
@@ -35,10 +35,10 @@ def test_error_for_incorrect_password(setup, login_bad_password):
 
     driver.get("https://stellarburgers.nomoreparties.site/register")
 
-    name_field = driver.find_element(By.XPATH, "//fieldset[1]//div[1]//div[1]//input[1]")
+    name_field = driver.find_element(By.XPATH, "(//input[@name='name'])[1]")
     name_field.send_keys(name)
 
-    email_field = driver.find_element(By.XPATH, "//fieldset[2]//div[1]//div[1]//input[1]")
+    email_field = driver.find_element(By.XPATH, "(//input[@name='name'])[2]")
     email_field.send_keys(email)
 
     password_field = driver.find_element(By.XPATH, " //input[@name='Пароль']")
