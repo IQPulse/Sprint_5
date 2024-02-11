@@ -1,4 +1,3 @@
-import pytest
 from selenium.webdriver.common.by import By
 from locators import (
     MainPageLocators,
@@ -10,8 +9,7 @@ from data import login_registered_user
 from config import BASE_URL
 
 class TestLoginPage:
-    def test_successful_login_via_homepage(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_login_via_homepage(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}")
@@ -30,8 +28,7 @@ class TestLoginPage:
 
         assert "Войти в аккаунт" not in driver.page_source
 
-    def test_successful_login_via_personal_account_button(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_login_via_personal_account_button(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}")
@@ -50,8 +47,7 @@ class TestLoginPage:
 
         assert "Войти в аккаунт" not in driver.page_source
 
-    def test_successful_login_via_registration_form(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_login_via_registration_form(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}/register")
@@ -70,8 +66,7 @@ class TestLoginPage:
 
         assert "Войти в аккаунт" not in driver.page_source
 
-    def test_successful_login_via_password_recovery_form(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_login_via_password_recovery_form(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}/forgot-password")

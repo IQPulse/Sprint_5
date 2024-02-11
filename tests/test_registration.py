@@ -7,9 +7,8 @@ from data import login_not_registered_user, login_bad_password
 from config import BASE_URL
 
 class TestRegistration:
-    @pytest.mark.usefixtures("setup", "login_not_registered_user")
-    def test_successful_registration(self, setup, login_not_registered_user):
-        driver = setup
+    @pytest.mark.usefixtures("driver", "login_not_registered_user")
+    def test_successful_registration(self, driver, login_not_registered_user):
         name, email, password = login_not_registered_user
 
         driver.get(f"{BASE_URL}/register")
@@ -30,12 +29,11 @@ class TestRegistration:
 
         assert "Вход" in driver.page_source
 
-    @pytest.mark.usefixtures("setup", "login_bad_password")
-    def test_error_for_incorrect_password(self, setup, login_bad_password):
-        driver = setup
+    @pytest.mark.usefixtures("driver", "login_bad_password")
+    def test_error_for_incorrect_password(self, driver, login_bad_password):
         name, email, password = login_bad_password
 
-        driver.get(f"{BASE_URL}/register")
+        driver.get("https://stellarburgers.nomoreparties.site/register")
 
         name_field = driver.find_element(By.XPATH, RegistrationPageLocators.LOGIN_INPUT)
         name_field.send_keys(name)

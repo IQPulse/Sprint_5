@@ -1,4 +1,3 @@
-import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -7,8 +6,7 @@ from data import login_registered_user
 from config import BASE_URL
 
 class TestNavigationFromConstructor:
-    def test_successful_navigation_to_buns_section(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_navigation_to_buns_section(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}/login")
@@ -32,8 +30,7 @@ class TestNavigationFromConstructor:
 
         assert driver.find_element(By.XPATH, MainPageLocators.CURRENT_BUNS_SECTION)
 
-    def test_successful_navigation_to_sauces_section(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_navigation_to_sauces_section(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}/login")
@@ -54,8 +51,7 @@ class TestNavigationFromConstructor:
 
         assert driver.find_element(By.XPATH, MainPageLocators.CURRENT_SAUCES_SECTION)
 
-    def test_successful_navigation_to_toppings_section(self, setup, login_registered_user):
-        driver = setup
+    def test_successful_navigation_to_toppings_section(self, driver, login_registered_user):
         email, password = login_registered_user
 
         driver.get(f"{BASE_URL}/login")
