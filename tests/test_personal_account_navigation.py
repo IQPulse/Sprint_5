@@ -9,7 +9,6 @@ from locators import (
 )
 from data import login_registered_user
 
-@pytest.mark.usefixtures("setup", "login_registered_user")
 class TestPersonalAccountNavigation:
     def test_successful_navigation_to_personal_account_on_click(self, setup, login_registered_user):
         driver = setup

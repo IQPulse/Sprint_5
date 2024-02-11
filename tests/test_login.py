@@ -8,7 +8,6 @@ from locators import (
 )
 from data import login_registered_user
 
-@pytest.mark.usefixtures("setup", "login_registered_user")
 class TestLoginPage:
     def test_successful_login_via_homepage(self, setup, login_registered_user):
         driver = setup
