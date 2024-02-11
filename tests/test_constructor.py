@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import MainPageLocators, LoginPageLocators
+from data import login_registered_user
 
 #Раздел Конструктор успешный переход к разделу Булки test_successful_navigation_to_buns_section_from_constructor
 @pytest.mark.usefixtures("setup", "login_registered_user")

@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import MainPageLocators, LoginPageLocators, PersonalAccountPageLocators
+from data import login_registered_user
 
 #Переход по клику на «Личный кабинет». test_successful_navigation_to_personal_account_on_click
 @pytest.mark.usefixtures("setup", "login_registered_user")

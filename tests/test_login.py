@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 from locators import MainPageLocators, LoginPageLocators, RegistrationPageLocators, PasswordRecoveryPageLocators
+from data import login_registered_user
 
 # Вход по кнопке «Войти в аккаунт» на главной test_successful_login_via_homepage
 @pytest.mark.usefixtures("setup", "login_registered_user")

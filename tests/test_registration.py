@@ -2,7 +2,9 @@ import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from locators import MainPageLocators, LoginPageLocators, RegistrationPageLocators, PasswordRecoveryPageLocators
+from locators import LoginPageLocators, RegistrationPageLocators
+from data import login_bad_password, login_not_registered_user
+
 
 #Успешная регистрация test_successful_registration
 @pytest.mark.usefixtures("setup", "login_not_registered_user")
