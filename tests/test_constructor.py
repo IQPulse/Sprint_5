@@ -4,13 +4,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import MainPageLocators, LoginPageLocators
 from data import login_registered_user
+from config import BASE_URL
 
 class TestNavigationFromConstructor:
     def test_successful_navigation_to_buns_section(self, setup, login_registered_user):
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)
@@ -35,7 +36,7 @@ class TestNavigationFromConstructor:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)
@@ -57,7 +58,7 @@ class TestNavigationFromConstructor:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)

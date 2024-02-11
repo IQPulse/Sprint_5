@@ -7,13 +7,14 @@ from locators import (
     PasswordRecoveryPageLocators
 )
 from data import login_registered_user
+from config import BASE_URL
 
 class TestLoginPage:
     def test_successful_login_via_homepage(self, setup, login_registered_user):
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/")
+        driver.get(f"{BASE_URL}")
 
         login_button = driver.find_element(By.XPATH, MainPageLocators.LOGIN_BUTTON)
         login_button.click()
@@ -33,7 +34,7 @@ class TestLoginPage:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/")
+        driver.get(f"{BASE_URL}")
 
         login_button = driver.find_element(By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
         login_button.click()
@@ -53,7 +54,7 @@ class TestLoginPage:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/register")
+        driver.get(f"{BASE_URL}/register")
 
         login_button = driver.find_element(By.XPATH, RegistrationPageLocators.LOGIN_LINK)
         login_button.click()
@@ -73,7 +74,7 @@ class TestLoginPage:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/forgot-password")
+        driver.get(f"{BASE_URL}/forgot-password")
 
         login_button = driver.find_element(By.XPATH, PasswordRecoveryPageLocators.LOGIN_LINK)
         login_button.click()

@@ -8,13 +8,14 @@ from locators import (
     PersonalAccountPageLocators
 )
 from data import login_registered_user
+from config import BASE_URL
 
 class TestPersonalAccountNavigation:
     def test_successful_navigation_to_personal_account_on_click(self, setup, login_registered_user):
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)
@@ -36,7 +37,7 @@ class TestPersonalAccountNavigation:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)
@@ -61,7 +62,7 @@ class TestPersonalAccountNavigation:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)
@@ -84,7 +85,7 @@ class TestPersonalAccountNavigation:
         driver = setup
         email, password = login_registered_user
 
-        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.get(f"{BASE_URL}/login")
 
         email_field = driver.find_element(By.XPATH, LoginPageLocators.EMAIL_INPUT)
         email_field.send_keys(email)
