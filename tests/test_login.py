@@ -5,7 +5,6 @@ from locators import (
     RegistrationPageLocators,
     PasswordRecoveryPageLocators
 )
-from data import login_registered_user
 from config import BASE_URL
 
 class TestLoginPage:

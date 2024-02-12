@@ -6,7 +6,6 @@ from locators import (
     LoginPageLocators,
     PersonalAccountPageLocators
 )
-from data import login_registered_user
 from config import BASE_URL
 
 class TestPersonalAccountNavigation:
@@ -23,6 +22,8 @@ class TestPersonalAccountNavigation:
 
         login_button = driver.find_element(By.XPATH, LoginPageLocators.LOGIN_BUTTON)
         login_button.click()
+
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)))
 
         login_button = driver.find_element(By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
         login_button.click()
@@ -46,6 +47,7 @@ class TestPersonalAccountNavigation:
         login_button = driver.find_element(By.XPATH, LoginPageLocators.LOGIN_BUTTON)
         login_button.click()
 
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)))
 
         login_button = driver.find_element(By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
         login_button.click()
@@ -71,6 +73,8 @@ class TestPersonalAccountNavigation:
         login_button = driver.find_element(By.XPATH, LoginPageLocators.LOGIN_BUTTON)
         login_button.click()
 
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)))
+
         login_button = driver.find_element(By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
         login_button.click()
 
@@ -94,6 +98,7 @@ class TestPersonalAccountNavigation:
         login_button = driver.find_element(By.XPATH, LoginPageLocators.LOGIN_BUTTON)
         login_button.click()
 
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)))
 
         login_button = driver.find_element(By.XPATH, MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
         login_button.click()

@@ -3,10 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import LoginPageLocators, RegistrationPageLocators
-from data import login_not_registered_user, login_bad_password
 from config import BASE_URL
 
 class TestRegistration:
+
     @pytest.mark.usefixtures("driver", "login_not_registered_user")
     def test_successful_registration(self, driver, login_not_registered_user):
         name, email, password = login_not_registered_user
@@ -33,7 +33,7 @@ class TestRegistration:
     def test_error_for_incorrect_password(self, driver, login_bad_password):
         name, email, password = login_bad_password
 
-        driver.get("https://stellarburgers.nomoreparties.site/register")
+        driver.get(f"{BASE_URL}/register")
 
         name_field = driver.find_element(By.XPATH, RegistrationPageLocators.LOGIN_INPUT)
         name_field.send_keys(name)

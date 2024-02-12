@@ -1,16 +1,7 @@
-import pytest
-from helpers import generate_user_data
+# Содержит данные для входа зарегистрированного пользователя.
+# Структура: (email, password)
+login_registered_user_data = ("anton_nazarov_5_002@ya.ru", "123456")
 
-@pytest.fixture(scope="module")
-def login_registered_user():
-    return "anton_nazarov_5_002@ya.ru", "123456"
-
-@pytest.fixture(scope="module")
-def login_bad_password():
-    return "anton_nazarov_5_003", "anton_nazarov_5_003@ya.ru", "12345"
-
-
-@pytest.fixture(scope="module")
-def login_not_registered_user():
-    name, email, password = generate_user_data()
-    return name, email, password
+# Данные для входа с неправильным паролем.
+# Структура: (username, email, password)
+login_bad_password_data = ("anton_nazarov_5_003", "anton_nazarov_5_003@ya.ru", "12345")
